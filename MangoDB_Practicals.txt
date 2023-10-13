@@ -1,0 +1,159 @@
+----------------------------------------------------------------------------------------------------------------------------------------------Assignment 1
+
+db.Dept.insert([
+    { "studID": 101, "studName": "Prakash", "age": 21, "gender": "Male", "add": "Pune", "courses": ["Computer Science", "Maths"], "marks": 81 },
+    { "studID": 102, "studName": "Pallawi", "age": 21, "gender": "Female", "add": "Nashik", "courses": ["GO Programming", "Law"], "marks": 45 },
+    { "studID": 103, "studName": "Priti", "age": 23, "gender": "Female", "add": "Mumbai", "courses": ["Computer Science", "Electronics"], "marks": 49 },
+    { "studID": 104, "studName": "Satish", "age": 20, "gender": "Male", "add": "Baramati", "courses": ["C", "Java"], "marks": 35 },
+    { "studID": 105, "studName": "Anuprita", "age": 22, "gender": "Female", "add": "Nagpur", "courses": ["C", "C++"], "marks": 37 },
+    { "studID": 106, "studName": "Niket", "age": 24, "gender": "Male", "add": "Nanded", "courses": ["Computer Science", "Home Science"], "marks": 92 },
+    { "studID": 107, "studName": "Sakshi", "age": 23, "gender": "Female", "add": "Pune", "courses": ["Computer Science", "Electronics"], "marks": 49 },
+    { "studID": 108, "studName": "Tanaya", "age": 20, "gender": "Female", "add": "Satara", "courses": ["C", "Java"], "marks": 35 },
+    { "studID": 109, "studName": "Samu", "age": 16, "gender": "Female", "add": "Kolhapur", "courses": ["C", "C++"], "marks": 37 },
+    { "studID": 110, "studName": "Samarth", "age": 20, "gender": "Male", "add": "Jalgaon", "courses": ["Computer Science", "Home Science"], "marks": 92 }
+])
+
+1) db.Dept.find({ marks: { $gt: 80 } }).count()
+
+2) db.Dept.find({ marks: { $lt: 40 } }, { _id: 0, studName: 1, age: 1 }).sort({ age: -1 }).limit(2)
+
+----------------------------------------------------------------------------------------------------------------------------------------------Assignment 2
+db.Product.insertMany([
+  { "pid": 1, "pname": "OnePlus6", "price": 35000, "brand": "OnePlus" },
+  { "pid": 2, "pname": "Iphone11", "price": 135000, "brand": "Apple" },
+  { "pid": 3, "pname": "Geyser", "price": 7000, "brand": "Bajaj" },
+  { "pid": 4, "pname": "Mixer", "price": 10000, "brand": "Bajaj" },
+  { "pid": 5, "pname": "OnePlus", "price": 35000, "brand": "OnePlus" },
+  { "pid": 6, "pname": "Iphone", "price": 135000, "brand": "Apple" },
+  { "pid": 7, "pname": "Ref", "price": 7000, "brand": "Bajaj" },
+  { "pid": 8, "pname": "AC", "price": 35000, "brand": "Whirlpool" },
+  { "pid": 9, "pname": "Fan", "price": 1000, "brand": "Bajaj" },
+  { "pid": 10, "pname": "Laptop", "price": 45000, "brand": "Dell" }
+]);
+
+db.Order.insertMany([
+  { "oID": 100, "oDate": "12-05-2015", "custName": "Mr.Arun", "pid": 1, "price": 10000, "invoiceStatus": 1 },
+  { "oID": 101, "oDate": "15-07-2016", "custName": "Mr.Bharat", "pid": 2, "price": 135000, "invoiceStatus": 0 },
+  { "oID": 102, "oDate": "15-09-2016", "custName": "Mr.Kumar", "pid": 3, "price": 10000, "invoiceStatus": 1 },
+  { "oID": 103, "oDate": "12-05-2015", "custName": "Mr.Prajwal", "pid": 4, "price": 10000, "invoiceStatus": 1 },
+  { "oID": 104, "oDate": "15-07-2016", "custName": "Mr.Omkar", "pid": 5, "price": 13000, "invoiceStatus": 0 },
+  { "oID": 105, "oDate": "15-09-2016", "custName": "Mr.Rajendra", "pid": 6, "price":10000, "invoiceStatus": 1 },
+  { "oID": 106, "oDate": "12-05-2015", "custName": "Mr.Sanjay", "pid": 7, "price": 10000, "invoiceStatus": 1 },
+  { "oID": 107, "oDate": "15-07-2016", "custName": "Mr.Samarth", "pid": 8, "price": 135000, "invoiceStatus": 0 },
+  { "oID": 108, "oDate": "15-09-2016", "custName": "Mr.Rajveer", "pid": 9, "price": 6000, "invoiceStatus": 1 },
+  { "oID": 109, "oDate": "12-05-2015", "custName": "Mr.Vishu", "pid": 1, "price": 5000, "invoiceStatus": 1 },
+  { "oID": 110, "oDate": "15-07-2016", "custName": "Mr.Ganesh", "pid": 2, "price": 10000, "invoiceStatus": 0 }
+]);
+
+db.Invoice.insertMany([
+  { "oID": 100, "custName": "Mr.Arun", "pid": 1, "qty": 2, "Total": 70000 },
+  { "oID": 101, "custName": "Mr.Bharat", "pid": 2, "qty": 2, "Total": 270000 },
+  { "oID": 102, "custName": "Mr.Kumar", "pid": 3, "qty": 2, "Total": 14000 },
+  { "oID": 103, "custName": "Mr.Prajwal", "pid": 4, "qty": 2, "Total": 70000 },
+  { "oID": 104, "custName": "Mr.Omkar", "pid": 5, "qty": 2, "Total": 26000 },
+  { "oID": 105, "custName": "Mr.Rajendra", "pid": 6, "qty": 2, "Total": 2000 },
+  { "oID": 106, "custName": "Mr.Sanjay", "pid": 7, "qty": 2, "Total": 18000 },
+  { "oID": 107, "custName": "Mr.Samarth", "pid": 8, "qty": 2, "Total": 27000 },
+  { "oID": 108, "custName": "Mr.Rajveer", "pid": 9, "qty": 2, "Total": 12000 },
+  { "oID": 109, "custName": "Mr.Vishu", "pid": 1, "qty": 2, "Total": 70000 },
+  { "oID": 110, "custName": "Mr.Ganesh", "pid": 2, "qty": 2, "Total": 270000 }
+]);
+
+1) db.Product.find({ "Inventory": { $in: ["value1", "value2"] } }).pretty();
+
+2) db.Order.find({ "price": { $gt: 10000 } }).pretty();
+
+----------------------------------------------------------------------------------------------------------------------------------------------Assignmet 3 
+
+db.Book.insertMany([
+  { "bID": 100, "bName": "DAA", "publisher": "Vision", "pubYear": 2017, "writer": "Mr. Anuj", "cost": 500, "lang": "English" },
+  { "bID": 101, "bName": "AI", "publisher": "Vision", "pubYear": 2016, "writer": "Mr. Raju", "cost": 350, "lang": "English" },
+  { "bID": 102, "bName": "Data Science", "publisher": "O'Reilly", "pubYear": 2017, "writer": "RaghuRamKrishnan", "cost": 550, "lang": "English" },
+  { "bID": 103, "bName": "Python", "publisher": "O'Reilly", "pubYear": 2017, "writer": "Mr. Ajay", "cost": 2000, "lang": "English" },
+  { "bID": 104, "bName": "API", "publisher": "Vision", "pubYear": 2017, "writer": "Mr. Samarth", "cost": 1400, "lang": "English" },
+  { "bID": 105, "bName": "DBT", "publisher": "Vision", "pubYear": 2016, "writer": "Mr.Prajwal", "cost": 1150, "lang": "English" },
+  { "bID": 106, "bName": "Cloud Computing", "publisher": "O'Reilly", "pubYear": 2017, "writer": "Mr.Shree", "cost": 1550, "lang": "English" },
+  { "bID": 107, "bName": "RM", "publisher": "O'Reilly", "pubYear": 2017, "writer": "Mr. Swami", "cost": 1200, "lang": "English" },
+  { "bID": 108, "bName": "Advanced Java", "publisher": "O'Reilly", "pubYear": 2017, "writer": "Mr.Avdhoot", "cost": 1000, "lang": "English" },
+  { "bID": 109, "bName": "Java", "publisher": "O'Reilly", "pubYear": 2017, "writer": "Mr.Indra", "cost": 900, "lang": "English" }
+])
+db.Publisher.insertMany([
+  { "pubID": 200, "pubName": "Nirali", "add": "Pune", "age": 50, "gender": "Male" },
+  { "pubID": 201, "pubName": "Tech Max", "add": "Mumbai", "age": 45, "gender": "Male" },
+  { "pubID": 202, "pubName": "Vision", "add": "Mumbai", "age": 48, "gender": "Male" },
+  { "pubID": 203, "pubName": "O'Reilly", "add": "Mumbai", "age": 50, "gender": "Male" },
+  { "pubID": 204, "pubName": "Pragati", "add": "Pune", "age": 50, "gender": "Male" },
+  { "pubID": 205, "pubName": "Mehta", "add": "Mumbai", "age": 45, "gender": "Male" },
+  { "pubID": 206, "pubName": "Vision", "add": "Mumbai", "age": 48, "gender": "Male" },
+  { "pubID": 207, "pubName": "RedHat", "add": "Mumbai", "age": 50, "gender": "Male" },
+  { "pubID": 208, "pubName": "Samarth", "add": "Mumbai", "age": 48, "gender": "Male" },
+  { "pubID": 209, "pubName": "Vision", "add": "Mumbai", "age": 50, "gender": "Male" }
+])
+
+db.Publisher.find({ "add": "Mumbai" }, { "_id": 0, "pubName": 1 })
+db.Book.find({ "cost": { $gt: 1000} }, { "_id": 0, "bName": 1 })
+
+----------------------------------------------------------------------------------------------------------------------------------------------Assignmet 4
+
+db.hospital.insertMany([
+  { "hID": 111, "Hname": "Jehangir Hospital", "add": "Camp", "Spec": ["Orthopedic"] },
+  { "hID": 112, "Hname": "Sahyadri Hospital", "add": "Deccan", "Spec": ["Pediatric"] },
+  { "hID": 113, "Hname": "Aditya Birla Hospital", "add": "Aundh", "Spec": ["Pediatric"] },
+  { "hID": 114, "Hname": "JJTU Hospital", "add": "Mumbai", "Spec": ["Orthopedic"] },
+  { "hID": 115, "Hname": "Jupiter Hospital", "add": "Baner", "Spec": ["Pediatric"] },
+  { "hID": 116, "Hname": "Motherhood Hospital", "add": "Bypass", "Spec": ["Pediatric"] },
+  { "hID": 117, "Hname": "Umang Hospital", "add": "Hadpsar", "Spec": ["Gynaec"] },
+  { "hID": 118, "Hname": "Yash Hospital", "add": "Hadpsar", "Spec": ["Orthopedic"] },
+  { "hID": 119, "Hname": "Rakshak Hospital", "add": "Kharadi", "Spec": ["Orthopedic"] },
+  { "hID": 120, "Hname": "Ruby hall Hospital", "add": "Tadiwala Road", "Spec": ["Pediatric"] }
+])
+
+Query 
+1)
+db.hospital.find({ "Spec": "Pediatric" }, { "Hname": 1, "_id": 0 })
+2)
+db.doctor.find({ "visits.monday": "Jehangir Hospital" }, { "dname": 1, "_id": 0 })
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+db.hospital.insertmany([
+{"hID" : 111,"Hname" : "Jehangir Hospital","add" : "Camp","Spec" : ["Orthopedic"]},
+{"hID" : 112,"Hname" : "Sahyadri Hospital","add" : "Deccan","Spec" : ["Pediatric"]},
+{"hID" : 113,"Hname" : "Aditya Birla Hospital","add" : "Aundh","Spec" : ["Pediatric"]},
+{"hID" : 114,"Hname" : "JJTU Hospital","add" : "Mumbai","Spec" : ["Orthopedic"]}
+{"hID" : 115,"Hname" : "Jupiter Hospital","add" : "Baner","Spec" : ["Pediatric"]},
+{"hID" : 116,"Hname" : "Motherhood Hospital","add" : "Bypass","Spec" : ["Pediatric"]},
+{"hID" : 117,"Hname" : "Umang Hospital","add" : "Hadpsar","Spec" : ["Gynaec"]},
+{"hID" : 118,"Hname" : "Yash Hospital","add" : "Hadpsar","Spec" : ["Orthopedic",]}
+{"hID" : 119,"Hname" : "Rakshak Hospital","add" : "Kharadi","Spec" : ["Orthopedic"]},
+{"hID" : 120,"Hname" : "Ruby hall Hospital","add" : "Tadiwala Road","Spec" : ["Pediatric"]},
+])
+db.doctor.insertmany([
+{"dID" : 211,"dname" : "Dr. Meher","specialist" : ["Allergist","Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital","Sahyadri Hospital"],"tuesday" : ["Aditya Birla Hospital"]}},
+{"dID" : 212,"dname" : "Dr. Bulakh","specialist" : ["Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital"],"tuesday" : ["Aditya Birla Hospital"]}}
+{"dID" : 213,"dname" : "Dr. Meenal","specialist" : ["Orthopedist"],"visits" : {"monday" : ["Aditya Birla Hospital"],"wednesday" : ["Jehangir Hospital","Aditya Birla Hospital"],"thursday":["Sahyadri Hospital"]}},
+{"dID" : 214,"dname" : "Dr. Kale","specialist" : ["Orthopedist"],"visits" : {"monday" : ["JJTU Hospital"],"wednesday" : ["Jehangir Hospital","Aditya Birla Hospital"]}}
+{"dID" : 215,"dname" : "Dr. Mahadik","specialist":["Allergist","Orthopedist"],"visits" : {"monday" : ["Rakshak Hospital","Ruby hall Hospital"],"tuesday" : ["Aditya Birla Hospital"]}},
+{"dID" : 216,"dname" : "Dr. Jagtap","specialist":["Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital"],"tuesday" : ["Motherhood Hospital"]}},
+{"dID" : 217,"dname" : "Dr. Deshmukh","specialist":["Orthopedist"],"visits" :{"friday" : ["Aditya Birla Hospital"],"wednesday" : ["Jupiter Hospital","Umang Hospital"],"thursday":["Sahyadri Hospital"]}},
+{"dID" : 218,"dname" : "Dr. Ambike","specialist":["Orthopedist"],"visits" : {"thursday" : ["JJTU Hospital"],"wednesday" : ["Rakshak Hospital","Aditya Birla Hospital"]}}
+{"dID" : 219,"dname" : "Dr. Modi","specialist":["Orthopedist"],"visits" : {"monday" : ["Aditya Birla Hospital"],"wednesday" : ["Yash Hospital","Umang Hospital"],"thursday":["Sahyadri Hospital"]}},
+{"dID" : 220,"dname" : "Dr. Pratik","specialist":["Orthopedist"],"visits" : {"tuesday" : ["JJTU Hospital"],"wednesday" : ["Motherhood Hospital","Aditya Birla Hospital"]}}
+])
+
+QUERY
+1) db.hospital.find({Spec:"Pediatric"},{Hname:1,_id:0})
+2) db.doctor.find({"visits.monday": "Jehangir Hospital"}, { "dname": 1, "_id": 0 })
+
+db.Person.insertmany([
+{ "pid" : 301, "Pname" : "Prakash", "gender" : "Male", "age" : 20, "rating" : {"Jehangir Hospital" : 2, "JJTU Hospital" : 3.5 }},
+{ "pid" : 302, "Pname" : "Shreya", "gender" : "Female", "age" : 30, "rating" : {"Jehangir Hospital" : 4, "Sahyadri Hospital" : 3 }},
+{ "pid" : 303, "Pname" : "Mrunu", "gender" : "Female", "age" : 32, "rating" : {"Jehangir Hospital" : 2.5, "Aditya Birla Hospital" : 5 }},
+{ "pid" : 304, "Pname" : "Aditya", "gender" : "Male", "age" : 27, "rating" : {"Jehangir Hospital" : 2.5, "Sahyadri Hospital" : 4 }}
+{ "pid" : 301, "Pname" : "Sakshi", "gender" : "Male", "age" : 23, "rating" : {"Motherhood Hospital" : 2, "JJTU Hospital" : 3.5 }},
+{ "pid" : 302, "Pname" : "Sandhya", "gender" : "Female", "age" : 22, "rating" : {"JJTU Hospital" : 4, "Sahyadri Hospital" : 3 }},
+{ "pid" : 303, "Pname" : "Tanaya", "gender" : "Female", "age" : 21, "rating" : {"Jupiter Hospital" : 2.5, "Ruby hall Hospital" : 5 }},
+{ "pid" : 304, "Pname" : "Geeta", "gender" : "Male", "age" : 22, "rating" : {"Yash Hospital" : 3.5, "Umanag Hospital" : 4 }}
+{ "pid" : 303, "Pname" : "Swarup", "gender" : "Female", "age" : 24, "rating" : {"Motherhood Hospital" : 2.5, "Aditya Birla Hospital" : 5 }},
+{ "pid" : 304, "Pname" : "Pratik", "gender" : "Male", "age" : 24, "rating" : {"Rakshak Hospital" : 2.5, "Jupiter Hospital" : 4 }}
+])
