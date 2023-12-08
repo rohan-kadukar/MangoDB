@@ -1,0 +1,17 @@
+db.department.insertMany( [
+        {sid:101,sname:"om",percentage:"90",course:["bcs","mcs"],gender:"male",add:"pune"},
+        {sid:102,sname:"yash",percentage:"94",course:"bcs",gender:"male",add:"pune"},     	{sid:103,sname:"omkar",percentage:"40",course:["bcs","mcs","testing"],gender:"male",add:"pune"},
+        {sid:104,sname:"sakshi",percentage:"20",course:"mcs",gender:"female",add:"pune"},	{sid:105,sname:"satvik",percentage:"10",course:["bsc","msc"],gender:"male",add:"pune"},
+        {sid:106,sname:"mahesh",percentage:"100",course:"mcs",gender:"male",add:"pune"},
+        {sid:107,sname:"omakr",percentage:"9",course:"bsc",gender:"male",add:"pune"},
+        {sid:108,sname:"jagdish",percentage:"4",course:"bcs",gender:"male",add:"pune"},
+        {sid:109,sname:"rushi",percentage:"33",course:"bcs",gender:"male",add:"pune"},
+        {sid:110,sname:"avi",percentage:"10",course:"mcs",gender:"male",add:"pune"}
+   ] );
+
+
+// find female live in pune 
+db.department.find({ gender: "female", add: "pune" })
+
+// count no. of students having more than 80 percentage
+db.department.find({ percentage: { $gt: "80" } }).count()

@@ -120,7 +120,7 @@ db.hospital.insertmany([
 {"hID" : 111,"Hname" : "Jehangir Hospital","add" : "Camp","Spec" : ["Orthopedic"]},
 {"hID" : 112,"Hname" : "Sahyadri Hospital","add" : "Deccan","Spec" : ["Pediatric"]},
 {"hID" : 113,"Hname" : "Aditya Birla Hospital","add" : "Aundh","Spec" : ["Pediatric"]},
-{"hID" : 114,"Hname" : "JJTU Hospital","add" : "Mumbai","Spec" : ["Orthopedic"]}
+{"hID" : 114,"Hname" : "JJTU Hospital","add" : "Mumbai","Spec" : ["Orthopedic"]},
 {"hID" : 115,"Hname" : "Jupiter Hospital","add" : "Baner","Spec" : ["Pediatric"]},
 {"hID" : 116,"Hname" : "Motherhood Hospital","add" : "Bypass","Spec" : ["Pediatric"]},
 {"hID" : 117,"Hname" : "Umang Hospital","add" : "Hadpsar","Spec" : ["Gynaec"]},
@@ -130,13 +130,13 @@ db.hospital.insertmany([
 ])
 db.doctor.insertmany([
 {"dID" : 211,"dname" : "Dr. Meher","specialist" : ["Allergist","Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital","Sahyadri Hospital"],"tuesday" : ["Aditya Birla Hospital"]}},
-{"dID" : 212,"dname" : "Dr. Bulakh","specialist" : ["Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital"],"tuesday" : ["Aditya Birla Hospital"]}}
+{"dID" : 212,"dname" : "Dr. Bulakh","specialist" : ["Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital"],"tuesday" : ["Aditya Birla Hospital"]}},
 {"dID" : 213,"dname" : "Dr. Meenal","specialist" : ["Orthopedist"],"visits" : {"monday" : ["Aditya Birla Hospital"],"wednesday" : ["Jehangir Hospital","Aditya Birla Hospital"],"thursday":["Sahyadri Hospital"]}},
-{"dID" : 214,"dname" : "Dr. Kale","specialist" : ["Orthopedist"],"visits" : {"monday" : ["JJTU Hospital"],"wednesday" : ["Jehangir Hospital","Aditya Birla Hospital"]}}
+{"dID" : 214,"dname" : "Dr. Kale","specialist" : ["Orthopedist"],"visits" : {"monday" : ["JJTU Hospital"],"wednesday" : ["Jehangir Hospital","Aditya Birla Hospital"]}},
 {"dID" : 215,"dname" : "Dr. Mahadik","specialist":["Allergist","Orthopedist"],"visits" : {"monday" : ["Rakshak Hospital","Ruby hall Hospital"],"tuesday" : ["Aditya Birla Hospital"]}},
 {"dID" : 216,"dname" : "Dr. Jagtap","specialist":["Orthopedist"],"visits" : {"monday" : ["Jehangir Hospital"],"tuesday" : ["Motherhood Hospital"]}},
 {"dID" : 217,"dname" : "Dr. Deshmukh","specialist":["Orthopedist"],"visits" :{"friday" : ["Aditya Birla Hospital"],"wednesday" : ["Jupiter Hospital","Umang Hospital"],"thursday":["Sahyadri Hospital"]}},
-{"dID" : 218,"dname" : "Dr. Ambike","specialist":["Orthopedist"],"visits" : {"thursday" : ["JJTU Hospital"],"wednesday" : ["Rakshak Hospital","Aditya Birla Hospital"]}}
+{"dID" : 218,"dname" : "Dr. Ambike","specialist":["Orthopedist"],"visits" : {"thursday" : ["JJTU Hospital"],"wednesday" : ["Rakshak Hospital","Aditya Birla Hospital"]}},
 {"dID" : 219,"dname" : "Dr. Modi","specialist":["Orthopedist"],"visits" : {"monday" : ["Aditya Birla Hospital"],"wednesday" : ["Yash Hospital","Umang Hospital"],"thursday":["Sahyadri Hospital"]}},
 {"dID" : 220,"dname" : "Dr. Pratik","specialist":["Orthopedist"],"visits" : {"tuesday" : ["JJTU Hospital"],"wednesday" : ["Motherhood Hospital","Aditya Birla Hospital"]}}
 ])
@@ -149,11 +149,11 @@ db.Person.insertmany([
 { "pid" : 301, "Pname" : "Prakash", "gender" : "Male", "age" : 20, "rating" : {"Jehangir Hospital" : 2, "JJTU Hospital" : 3.5 }},
 { "pid" : 302, "Pname" : "Shreya", "gender" : "Female", "age" : 30, "rating" : {"Jehangir Hospital" : 4, "Sahyadri Hospital" : 3 }},
 { "pid" : 303, "Pname" : "Mrunu", "gender" : "Female", "age" : 32, "rating" : {"Jehangir Hospital" : 2.5, "Aditya Birla Hospital" : 5 }},
-{ "pid" : 304, "Pname" : "Aditya", "gender" : "Male", "age" : 27, "rating" : {"Jehangir Hospital" : 2.5, "Sahyadri Hospital" : 4 }}
+{ "pid" : 304, "Pname" : "Aditya", "gender" : "Male", "age" : 27, "rating" : {"Jehangir Hospital" : 2.5, "Sahyadri Hospital" : 4 }},
 { "pid" : 301, "Pname" : "Sakshi", "gender" : "Male", "age" : 23, "rating" : {"Motherhood Hospital" : 2, "JJTU Hospital" : 3.5 }},
 { "pid" : 302, "Pname" : "Sandhya", "gender" : "Female", "age" : 22, "rating" : {"JJTU Hospital" : 4, "Sahyadri Hospital" : 3 }},
 { "pid" : 303, "Pname" : "Tanaya", "gender" : "Female", "age" : 21, "rating" : {"Jupiter Hospital" : 2.5, "Ruby hall Hospital" : 5 }},
-{ "pid" : 304, "Pname" : "Geeta", "gender" : "Male", "age" : 22, "rating" : {"Yash Hospital" : 3.5, "Umanag Hospital" : 4 }}
+{ "pid" : 304, "Pname" : "Geeta", "gender" : "Male", "age" : 22, "rating" : {"Yash Hospital" : 3.5, "Umanag Hospital" : 4 }},
 { "pid" : 303, "Pname" : "Swarup", "gender" : "Female", "age" : 24, "rating" : {"Motherhood Hospital" : 2.5, "Aditya Birla Hospital" : 5 }},
 { "pid" : 304, "Pname" : "Pratik", "gender" : "Male", "age" : 24, "rating" : {"Rakshak Hospital" : 2.5, "Jupiter Hospital" : 4 }}
 ])

@@ -1,0 +1,26 @@
+db.book.insertMany([
+    {bid:101,bname:"RM",cost:11100},
+    {bid:102,bname:"AWS",cost:100},
+    {bid:103,bname:"CS",cost:1110},
+    {bid:104,bname:"Networking",cost:10},
+    {bid:105,bname:"DBT",cost:1001}, 
+    {bid:106,bname:"AI",cost:1200},
+    {bid:107,bname:"ML",cost:1100},
+    {bid:108,bname:"DL",cost:20},
+    {bid:109,bname:"OS",cost:10},
+    {bid:110,bname:"DSA",cost:1000}    
+]);
+
+db.publishers.insertMany([
+    {pid:1,location:"mumbai",pname:"nirali"},
+    {pid:2,location:"pune",pname:"balbharati"},
+    {pid:3,location:"karnataka",pname:"vision"}
+    
+]);
+
+
+// list the publishers in mumbai
+db.publishers.find({location:"mumbai"})
+
+// List the details of books with a cost >1000.
+db.book.find({cost:{$gt:1000}})
